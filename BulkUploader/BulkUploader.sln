@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{00000000-0000-0000-0000-000000000000}") = "VESHTER.BulkUploader", "BulkUploader\VESHTER.BulkUploader.csproj", "{E7F00231-48B8-49B2-9329-1D988C92A7B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VESHTER.BulkUploader.Web", "BulkUploader.Web\VESHTER.BulkUploader.Web.csproj", "{0F345C26-D0D5-4FA7-AFA9-F8F504725614}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7F00231-48B8-49B2-9329-1D988C92A7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F00231-48B8-49B2-9329-1D988C92A7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F00231-48B8-49B2-9329-1D988C92A7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F00231-48B8-49B2-9329-1D988C92A7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F345C26-D0D5-4FA7-AFA9-F8F504725614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F345C26-D0D5-4FA7-AFA9-F8F504725614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F345C26-D0D5-4FA7-AFA9-F8F504725614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F345C26-D0D5-4FA7-AFA9-F8F504725614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

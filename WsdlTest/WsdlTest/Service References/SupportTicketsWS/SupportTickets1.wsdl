@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://veshter.com/webservices/supporttickets/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SupportTickets" targetNamespace="http://veshter.com/webservices/supporttickets/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://veshter.com/webservices/supporttickets/">
+      <xsd:element name="OpenTicket">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="details" type="tns:SupportTicket" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="OpenTicketResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ticket" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CloseTicket">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="note" type="tns:SupportTicketNote" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CloseTicketResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isClosed" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReopenTicket">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="note" type="tns:SupportTicketNote" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReopenTicketResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReopened" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddTicketNote">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="note" type="tns:SupportTicketNote" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddTicketNoteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isAdded" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllTickets">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllTicketsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="tickets" type="tns:SupportTicket" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllOpenTickets">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllOpenTicketsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="tickets" type="tns:SupportTicket" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTicketDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="ticket" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTicketDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="details" type="tns:SupportTicket" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="SupportTicket">
+        <xsd:sequence>
+          <xsd:element name="guid" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="priority" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="notes" type="tns:SupportTicketNote" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="lastOpen" type="xsd:float" />
+          <xsd:element name="lastUpdate" type="xsd:float" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SupportTicketNote">
+        <xsd:sequence>
+          <xsd:element name="guid" type="xsd:string" />
+          <xsd:element name="about" type="xsd:string" />
+          <xsd:element name="author" type="xsd:string" />
+          <xsd:element name="lastUpdate" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OpenTicketRequest">
+    <wsdl:part name="parameters" element="tns:OpenTicket" />
+  </wsdl:message>
+  <wsdl:message name="OpenTicketResponse">
+    <wsdl:part name="parameters" element="tns:OpenTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseTicketRequest">
+    <wsdl:part name="parameters" element="tns:CloseTicket" />
+  </wsdl:message>
+  <wsdl:message name="CloseTicketResponse">
+    <wsdl:part name="parameters" element="tns:CloseTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReopenTicketRequest">
+    <wsdl:part name="parameters" element="tns:ReopenTicket" />
+  </wsdl:message>
+  <wsdl:message name="ReopenTicketResponse">
+    <wsdl:part name="parameters" element="tns:ReopenTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketNoteRequest">
+    <wsdl:part name="parameters" element="tns:AddTicketNote" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketNoteResponse">
+    <wsdl:part name="parameters" element="tns:AddTicketNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTicketsRequest">
+    <wsdl:part name="parameters" element="tns:GetAllTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTicketsResponse">
+    <wsdl:part name="parameters" element="tns:GetAllTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOpenTicketsRequest">
+    <wsdl:part name="parameters" element="tns:GetAllOpenTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOpenTicketsResponse">
+    <wsdl:part name="parameters" element="tns:GetAllOpenTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketDetailsRequest">
+    <wsdl:part name="parameters" element="tns:GetTicketDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketDetailsResponse">
+    <wsdl:part name="parameters" element="tns:GetTicketDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SupportTickets">
+    <wsdl:operation name="OpenTicket">
+      <wsdl:input message="tns:OpenTicketRequest" />
+      <wsdl:output message="tns:OpenTicketResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseTicket">
+      <wsdl:input message="tns:CloseTicketRequest" />
+      <wsdl:output message="tns:CloseTicketResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ReopenTicket">
+      <wsdl:input message="tns:ReopenTicketRequest" />
+      <wsdl:output message="tns:ReopenTicketResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketNote">
+      <wsdl:input message="tns:AddTicketNoteRequest" />
+      <wsdl:output message="tns:AddTicketNoteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTickets">
+      <wsdl:input message="tns:GetAllTicketsRequest" />
+      <wsdl:output message="tns:GetAllTicketsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenTickets">
+      <wsdl:input message="tns:GetAllOpenTicketsRequest" />
+      <wsdl:output message="tns:GetAllOpenTicketsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketDetails">
+      <wsdl:input message="tns:GetTicketDetailsRequest" />
+      <wsdl:output message="tns:GetTicketDetailsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SupportTicketsSOAP" type="tns:SupportTickets">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenTicket">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/OpenTicket" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseTicket">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/CloseTicket" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReopenTicket">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/ReopenTicket" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketNote">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/AddTicketNote" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTickets">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/GetAllTickets" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenTickets">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/GetAllOpenTickets" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketDetails">
+      <soap:operation soapAction="http://veshter.com/webservices/supporttickets/GetTicketDetails" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupportTickets">
+    <wsdl:port name="SupportTicketsSOAP" binding="tns:SupportTicketsSOAP">
+      <soap:address location="https://secure.veshter.com/webservices/supporttickets.vesh" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+<publishData>
+  <publishTarget publishUrl="D:\dkolev\VESHTER\sourcecode\sharedscripts\static\bulkupload\">
+    <file relUrl="bin/zh-Hant/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/zh-Hans/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/de/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="ClientBin/BulkUploader.xap" publishTime="03/08/2009 19:27:32" />
+    <file relUrl="bin/VESHTER.BulkUploader.Web.dll" publishTime="03/08/2009 19:27:32" />
+    <file relUrl="Web.config" publishTime="03/08/2009 19:29:02" />
+    <file relUrl="BulkUploaderTestPage.aspx" publishTime="03/08/2009 19:10:56" />
+    <file relUrl="bin/VESHTER.BulkUploader.Web.pdb" publishTime="03/08/2009 19:27:32" />
+    <file relUrl="bin/fr/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/ja/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="BulkUploaderTestPage.html" publishTime="03/08/2009 19:10:56" />
+    <file relUrl="bin/it/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="bin/ko/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="Default.aspx" publishTime="03/08/2009 19:10:54" />
+    <file relUrl="bin/System.Web.Silverlight.dll" publishTime="10/05/2008 02:53:18" />
+    <file relUrl="Silverlight.js" publishTime="03/08/2009 19:10:56" />
+    <file relUrl="bin/es/System.Web.Silverlight.resources.dll" publishTime="10/05/2008 02:53:18" />
+  </publishTarget>
+</publishData>

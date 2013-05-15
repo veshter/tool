@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://veshter.com/webservices/scripts/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Scripts" targetNamespace="http://veshter.com/webservices/scripts/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://veshter.com/webservices/scripts/">
+      <xsd:complexType name="Script">
+        <xsd:sequence>
+          <xsd:element name="folder" type="xsd:string" />
+          <xsd:element name="filename" type="xsd:string" />
+          <xsd:element name="source" type="xsd:string" />
+          <xsd:element name="version" type="xsd:float" />
+          <xsd:element name="changelog" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetScriptDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="folder" type="xsd:string" />
+            <xsd:element name="filename" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetScriptDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="details" type="tns:Script" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetLatestScripts">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resource" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetLatestScriptsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="scripts" type="tns:Script" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetScriptDetailsRequest">
+    <wsdl:part name="parameters" element="tns:GetScriptDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetScriptDetailsResponse">
+    <wsdl:part name="parameters" element="tns:GetScriptDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestScriptsRequest">
+    <wsdl:part name="parameters" element="tns:GetLatestScripts" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestScriptsResponse">
+    <wsdl:part name="parameters" element="tns:GetLatestScriptsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Scripts">
+    <wsdl:operation name="GetLatestScripts">
+      <wsdl:input message="tns:GetLatestScriptsRequest" />
+      <wsdl:output message="tns:GetLatestScriptsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScriptDetails">
+      <wsdl:input message="tns:GetScriptDetailsRequest" />
+      <wsdl:output message="tns:GetScriptDetailsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ScriptsSOAP" type="tns:Scripts">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetScriptDetails">
+      <soap:operation soapAction="http://veshter.com/webservices/scripts/GetScriptDetails" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestScripts">
+      <soap:operation soapAction="http://veshter.com/webservices/scripts/GetLatestScripts" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Scripts">
+    <wsdl:port name="ScriptsSOAP" binding="tns:ScriptsSOAP">
+      <soap:address location="https://secure.veshter.com/webservices/scripts.vesh" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
